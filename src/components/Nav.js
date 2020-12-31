@@ -1,12 +1,14 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 
 function Nav() {
   return (
     <nav>
     <div className="nav-container">
-        <p>cheers beers</p>
-        <p>sign in</p>
+      <Link to="/"><p>cheers beers</p></Link>
+      <p>sign in</p>
+
     </div>
     </nav>
   );

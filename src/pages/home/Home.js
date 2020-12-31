@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Button from '../../components/Button';
 import Nav from '../../components/Nav';
 import './Home.css';
@@ -6,7 +7,6 @@ import './Home.css';
 function Home() {
   return (
     <div className="home-container">
-      <Nav />
       <section className="landing-pg-container">
       <article>
         <h1>Beers list</h1>
@@ -14,7 +14,10 @@ function Home() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
           labore et dolore.
         </p>
-        <Button label="get beers list"/>
+        <Link to="/table">
+          <Button label="get beers list"/>
+        </Link>
+        
         
       </article>
       </section>
