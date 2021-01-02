@@ -4,10 +4,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Nav from './components/Nav';
 import Table from './pages/table/Table';
+import Beer from './pages/beer/Beer';
 
 function App() {
   return (
@@ -17,6 +17,9 @@ function App() {
       <Router>
         <Nav />
         <Switch>
+          <Route path="/beers/:id">
+            <Beer />
+          </Route>
           <Route path="/table">
             <Table />
           </Route>
@@ -24,7 +27,6 @@ function App() {
             <Home />
           </Route>
         </Switch>
-
       </Router>
       
     </div>
