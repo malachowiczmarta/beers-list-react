@@ -10,6 +10,7 @@ import Table from './pages/table/Table';
 import Beer from './pages/beer/Beer';
 
 function App() {
+  
   return (
     <div className="App">
       

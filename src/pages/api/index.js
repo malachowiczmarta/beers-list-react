@@ -1,10 +1,10 @@
 import axios from "axios";
 
-function request(method, endpoint, data = null) {
+function request(method, endpoint = "", data = null) {
 
     return axios({
         method,
-        url: `https://api.punkapi.com/v2/${endpoint}`,
+        url: `https://api.punkapi.com/v2/beers/${endpoint}`,  
         data,
         headers: {
             'Content-type': 'application/json',
