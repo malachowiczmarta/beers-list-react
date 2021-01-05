@@ -1,4 +1,5 @@
 import React from 'react';
+import './BeerDetails.css'
 
 function BeerDetails({data}) {
   
