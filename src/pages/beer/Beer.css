@@ -148,7 +148,7 @@ li::before {
     background-color: rgb(255, 195, 65);
 }
 
-.brewed::before {
+/* .brewed::before {
     background-image: url(../img/distillatory.png);
 }
 
@@ -162,4 +162,4 @@ li::before {
 
 .brewers_tips::before {
     background-image: url(../img/light-bulb.png);
-}
+} */

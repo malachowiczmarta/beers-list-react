@@ -16,6 +16,9 @@ function Home() {
         <Link to="/table">
           <Button label="get beers list"/>
         </Link>
+        <Link to="/random">
+          <Button label="get random beer"/>
+        </Link>
         
         
       </article>

@@ -24,6 +24,9 @@ function App() {
           <Route path="/table">
             <Table />
           </Route>
+          <Route path="/random">
+            <Table />
+          </Route>
           <Route path="/">
             <Home />
           </Route>
