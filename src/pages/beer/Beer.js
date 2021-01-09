@@ -3,6 +3,7 @@ import {
   useParams,
   Link
 } from "react-router-dom";
+import Loader from "react-loader-spinner";
 import BeerDetails from '../../components/beerDetails/BeerDetails';
 import api from '../api';
 import './Beer.css';
@@ -12,20 +13,24 @@ import './Beer.css';
 function Beer() {
   let {id} = useParams();
   const [beer, setBeer] = useState("");
-
-  console.log(id)
-  console.log(beer)
+  const [spinnerLoading, setSpinnerLoading] = useState(true);
 
   useEffect(() => {
     api.get(id).then((response) => {
       setBeer(response.data[0]);  
+      setSpinnerLoading(false);  
+
     })
   }, []);
   
   return (
     <>
       <Link to="/table">wróc do listy piw</Link>
-      <BeerDetails data={beer}/>
+      {
+        spinnerLoading ? <Loader type="ThreeDots" color="#31357F" height={100} width={100} /> : 
+        <BeerDetails data={beer}/>
+      }
+      
     </>
 
   );
