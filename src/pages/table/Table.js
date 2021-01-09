@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { forwardRef } from 'react';
+import Loader from "react-loader-spinner";
 
 import MaterialTable from 'material-table';
 import {Link} from "react-router-dom";
@@ -43,46 +44,48 @@ const tableIcons = {
 
 function Table() {
     const [beersList, setBeersList] = useState([]);
+    const [spinnerLoading, setSpinnerLoading] = useState(true);
 
     useEffect(() => {
         api.get().then((response) => {
-          setBeersList(response.data);  
+          setBeersList(response.data);
+          setSpinnerLoading(false);  
         })
     }, []);
 
     console.log(beersList)
 
   return (
-    
-    <div className="table-container">
-        <MaterialTable
-            columns={[
-            { title: 'Id', field: 'id', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.id}</Link>},
-            { title: 'Name', field: 'name', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.name}</Link>},
-            { title: 'Tagline', field: 'tagline', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.tagline}</Link>},
-            { title: 'First brewed', field: 'first_brewed', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.first_brewed}</Link>},
-            { title: 'abv', field: 'abv', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.abv}</Link>},
-            { title: 'ibu', field: 'ibu', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.ibu}</Link>},
-            { title: 'ebc', field: 'ebc', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.ebc}</Link>},
-            
-            ]}
-            data = {beersList}
-            options={
-                {
-                    search: true
-                },
-                {
-                    paging:true,
-                    pageSize:10,       
-                    emptyRowsWhenPaging: true,   
-                    pageSizeOptions:[10,20,30,40],
+      <div className="table-container">
+            {spinnerLoading ? <Loader type="ThreeDots" color="#31357F" height={100} width={100} /> :
+            <MaterialTable
+                columns={[
+                { title: 'Id', field: 'id', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.id}</Link>},
+                { title: 'Name', field: 'name', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.name}</Link>},
+                { title: 'Tagline', field: 'tagline', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.tagline}</Link>},
+                { title: 'First brewed', field: 'first_brewed', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.first_brewed}</Link>},
+                { title: 'abv', field: 'abv', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.abv}</Link>},
+                { title: 'ibu', field: 'ibu', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.ibu}</Link>},
+                { title: 'ebc', field: 'ebc', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.ebc}</Link>},            
+                ]}
+                data = {beersList}
+                options={
+                    {
+                        search: true
+                    },
+                    {
+                        paging:true,
+                        pageSize:10,       
+                        emptyRowsWhenPaging: true,   
+                        pageSizeOptions:[10,20,30,40],
+                    }
                 }
+                icons={tableIcons}
+            />
+
             }
-            icons={tableIcons}
-            
-        />
-    </div>
-    
+      </div>
+
   );
 }
 

@@ -8,6 +8,7 @@ import {
 import Nav from './components/Nav';
 import Table from './pages/table/Table';
 import Beer from './pages/beer/Beer';
+import Random from './pages/random/Random';
 
 function App() {
   
@@ -25,7 +26,7 @@ function App() {
             <Table />
           </Route>
           <Route path="/random">
-            <Table />
+            <Random />
           </Route>
           <Route path="/">
             <Home />
