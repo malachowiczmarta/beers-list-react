@@ -20,8 +20,6 @@ function BeerDetails({data}) {
         <div className="grid-item-header-ebc">
           <h3>EBC</h3>
         </div>
-        <div className="grid-item"></div>
-        <div className="grid-item"></div>
 
         <div className="grid-item-abv">
           <p className="number">{data.abv}</p>
@@ -34,18 +32,6 @@ function BeerDetails({data}) {
         <div className="grid-item-ebc">
         <p className="number">{data.ebc}</p>
         </div>
-        <div className="grid-item"></div>
-        <div className="grid-item-chartMalt">
-          <canvas id="chartMalt"></canvas>
-        </div>
-
-        <div className="grid-item"></div>
-        <div className="grid-item"></div>
-        <div className="grid-item"></div>
-        <div className="grid-item"></div>
-        <div className="grid-item"></div>
-        <div className="grid-item"></div>
-        <div className="grid-item"></div>
 
         <div id="name" className="grid-item-main">
           <h1>{data.name}</h1>
@@ -55,18 +41,6 @@ function BeerDetails({data}) {
         <div className="grid-item-main"></div>
         <div className="grid-item-main"></div>
         <div className="grid-item-main"></div>
-        <div className="grid-item"></div>
-        <div className="grid-item-chartHops">
-          <canvas id="chartHops"></canvas>
-        </div>
-
-        <div className="grid-item"></div>
-        <div className="grid-item"></div>
-        <div className="grid-item"></div>
-        <div className="grid-item"></div>
-        <div className="grid-item"></div>
-        <div className="grid-item"></div>
-        <div className="grid-item"></div>
 
         <div id="description" className="grid-item-desc">
           <ul>
@@ -81,10 +55,7 @@ function BeerDetails({data}) {
         <div className="grid-item-desc"></div>
         <div className="grid-item-desc"></div>
         <div className="grid-item-desc"></div>
-        <div className="grid-item"></div>
-        <div className="grid-item-chartYeast">
-          <canvas id="chartYeast"></canvas>
-        </div>
+
       </section>
     </>
 

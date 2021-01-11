@@ -25,12 +25,20 @@ function Beer() {
   
   return (
     <>
-      <Link to="/table">wróc do listy piw</Link>
-      {
-        spinnerLoading ? <Loader type="ThreeDots" color="#31357F" height={100} width={100} /> : 
-        <BeerDetails data={beer}/>
-      }
-      
+      <div className="link-container">
+        <Link to="/table">back to the list</Link>
+      </div>
+      <div className="details-container">
+        {
+          spinnerLoading ? <Loader type="ThreeDots" color="#31357F" height={100} width={100} /> : 
+          <>
+            <BeerDetails data={beer}/>
+            <div className="charts-container"></div>
+          </>
+          
+        }
+      </div>
+
     </>
 
   );
