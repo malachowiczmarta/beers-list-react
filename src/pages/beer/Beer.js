@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import Loader from "react-loader-spinner";
 import BeerDetails from '../../components/beerDetails/BeerDetails';
-import api from '../api';
+import api from '../../api';
 import './Beer.css';
 import Button from '../../components/button/Button';
 import { BiArrowBack } from "react-icons/bi";
@@ -40,7 +40,6 @@ function Beer() {
           <BeerDetails data={beer}/>
         }
     </>
-
   );
 }
 

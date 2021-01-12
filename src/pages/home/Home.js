@@ -13,13 +13,12 @@ function Home() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
           labore et dolore.
         </p>
-        <Link to="/table">
+        <Link to="/beers">
           <Button label="get beers list"/>
         </Link>
         <Link to="/random">
           <Button label="get random beer"/>
         </Link>
-
       </article>
       </section>
      <a href='https://www.freepik.com/vectors/party'>Party vector created by pch.vector - www.freepik.com</a> 

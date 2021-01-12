@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BeerDetails from '../../components/beerDetails/BeerDetails';
-import api from '../api';
+import api from '../../api';
 import Loader from "react-loader-spinner";
 import './Random.css';
 import Button from '../../components/button/Button';

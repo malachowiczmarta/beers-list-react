@@ -1,23 +1,7 @@
-nav {
-    width: 100%;
-    height: 60px;
-    background-color: #ffa823;
-    color: white;
-}
-
 h1 {
     font-size: 72px;
     color: white;
     text-transform: uppercase;
-}
-
-.nav-container {
-    width: 80%;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .landing-pg-container {
