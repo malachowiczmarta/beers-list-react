@@ -11,20 +11,25 @@ import { FaRegHeart } from "react-icons/fa";
 function Random() {
   const [beer, setBeer] = useState("");
   const [spinnerLoading, setSpinnerLoading] = useState(true);
+  const [hasError, setError] = useState(false);
 
 
 
   useEffect(() => {
-    api.get("random").then((response) => {
+    api.get("random")
+    .then((response) => {
       setBeer(response.data[0]);
-      setSpinnerLoading(false);    
+      setSpinnerLoading(false)    
+    })
+    .catch(error => {
+      setError(true);
+      setSpinnerLoading(false);
     })
   }, []);
-
-  console.log(beer)
   
   return (
     <>
+      {hasError && <p>An error has occurred, try later</p>}
       {
         spinnerLoading ? <Loader type="ThreeDots" color="#31357F" height={100} width={100} /> :
           <>

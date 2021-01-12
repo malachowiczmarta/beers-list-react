@@ -15,13 +15,17 @@ function Beer() {
   let {id} = useParams();
   const [beer, setBeer] = useState("");
   const [spinnerLoading, setSpinnerLoading] = useState(true);
+  const [hasError, setError] = useState(false);
 
   useEffect(() => {
-    api.get(id).then((response) => {
+    api.get(id)
+    .then(response => {
       setBeer(response.data[0]);  
-      setSpinnerLoading(false);  
-
-    })
+      setSpinnerLoading(false)})
+      .catch(error => {
+        setError(true);
+        setSpinnerLoading(false);
+      })
   }, []);
   
   return (
@@ -30,6 +34,7 @@ function Beer() {
         <Link to="/table"><span><BiArrowBack /> back to the list</span></Link>
         <Button label="add to the favorite" icon={<FaRegHeart />}/>
       </div>
+        {hasError && <p>An error has occurred, try later</p>}
         {
           spinnerLoading ? <Loader type="ThreeDots" color="#31357F" height={100} width={100} /> : 
           <BeerDetails data={beer}/>
