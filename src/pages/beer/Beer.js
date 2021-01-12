@@ -7,8 +7,9 @@ import Loader from "react-loader-spinner";
 import BeerDetails from '../../components/beerDetails/BeerDetails';
 import api from '../api';
 import './Beer.css';
-
-
+import Button from '../../components/button/Button';
+import { BiArrowBack } from "react-icons/bi";
+import { FaRegHeart } from "react-icons/fa";
 
 function Beer() {
   let {id} = useParams();
@@ -26,19 +27,13 @@ function Beer() {
   return (
     <>
       <div className="link-container">
-        <Link to="/table">back to the list</Link>
+        <Link to="/table"><span><BiArrowBack /> back to the list</span></Link>
+        <Button label="add to the favorite" icon={<FaRegHeart />}/>
       </div>
-      <div className="details-container">
         {
           spinnerLoading ? <Loader type="ThreeDots" color="#31357F" height={100} width={100} /> : 
-          <>
-            <BeerDetails data={beer}/>
-            <div className="charts-container"></div>
-          </>
-          
+          <BeerDetails data={beer}/>
         }
-      </div>
-
     </>
 
   );

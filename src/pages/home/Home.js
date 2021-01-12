@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Button from '../../components/Button';
+import Button from '../../components/button/Button';
 import './Home.css';
 
 function Home() {
@@ -19,8 +19,7 @@ function Home() {
         <Link to="/random">
           <Button label="get random beer"/>
         </Link>
-        
-        
+
       </article>
       </section>
      <a href='https://www.freepik.com/vectors/party'>Party vector created by pch.vector - www.freepik.com</a> 

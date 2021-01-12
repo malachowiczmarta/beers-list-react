@@ -3,6 +3,8 @@ import BeerDetails from '../../components/beerDetails/BeerDetails';
 import api from '../api';
 import Loader from "react-loader-spinner";
 import './Random.css';
+import Button from '../../components/button/Button';
+import { FaRegHeart } from "react-icons/fa";
 
 
 
@@ -22,12 +24,17 @@ function Random() {
   console.log(beer)
   
   return (
-    <div className="random-details-container">
+    <>
       {
-        spinnerLoading ? <Loader type="ThreeDots" color="#31357F" height={100} width={100} /> : 
-        <BeerDetails data={beer}/>
+        spinnerLoading ? <Loader type="ThreeDots" color="#31357F" height={100} width={100} /> :
+          <>
+            <div className="add-btn-container">
+              <Button label="add to the favorite" icon={<FaRegHeart />}/>
+            </div>
+            <BeerDetails data={beer}/>
+          </>
       }
-    </div>
+    </>
 
   );
 }

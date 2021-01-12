@@ -4,10 +4,9 @@ import './BeerDetails.css'
 function BeerDetails({data}) {
   
   return (
-    <>
+    <div className="beer-details-container">
       
-      <section className="grid-container">
-        
+      <div className="grid-container">
 
         <div className="grid-item-header-abv">
           <h3>ABV</h3>
@@ -44,20 +43,21 @@ function BeerDetails({data}) {
 
         <div id="description" className="grid-item-desc">
           <ul>
-            <li>{data.first_brewed}</li>
+            <li>First brewed: {data.first_brewed}</li>
             <li>{data.description}</li>
             <li>{data.food_pairing}</li>
             <li>{data.brewers_tips}</li>
           </ul>
-          
         </div>
         <div className="grid-item-desc"></div>
         <div className="grid-item-desc"></div>
         <div className="grid-item-desc"></div>
         <div className="grid-item-desc"></div>
-
-      </section>
-    </>
+      </div>
+      <div className="charts-container">
+        {/* <Chart /> */}
+      </div>
+    </div>
 
   );
 }
