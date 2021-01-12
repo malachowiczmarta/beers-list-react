@@ -20,3 +20,9 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
+
+.logo {
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
+    color: #191C47; 
+}

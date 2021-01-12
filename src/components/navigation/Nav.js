@@ -7,7 +7,7 @@ function Nav() {
   return (
     <nav>
     <div className="nav-container">
-      <p>cheers beers</p>
+      <p className="logo">cheers beers</p>
       <div className="nav-links">
         <Link to="/"><p>Home</p></Link>
         <Link to="/favorite"><p>Favorite</p></Link>
