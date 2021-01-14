@@ -4,7 +4,7 @@ function request(method, endpoint = "", data = null) {
 
     return axios({
         method,
-        url: `https://api.punkapi.com/v2/beers/${endpoint}`,  
+        url: `https://api.punkapi.com/v2/beers${endpoint}`,  
         data,
         headers: {
             'Content-type': 'application/json',

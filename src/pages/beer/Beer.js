@@ -18,7 +18,7 @@ function Beer() {
   const [hasError, setError] = useState(false);
 
   useEffect(() => {
-    api.get(id)
+    api.get(`/${id}`)
     .then(response => {
       setBeer(response.data[0]);  
       setSpinnerLoading(false)})

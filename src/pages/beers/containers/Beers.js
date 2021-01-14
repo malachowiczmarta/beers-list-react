@@ -10,7 +10,7 @@ function Beers() {
     const [hasError, setError] = useState(false);
 
     useEffect(() => {
-        api.get()
+        api.get("?page=1&per_page=80")
         .then((response) => {
           setBeersList(response.data);
           setSpinnerLoading(false)  

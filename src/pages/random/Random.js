@@ -16,7 +16,7 @@ function Random() {
 
 
   useEffect(() => {
-    api.get("random")
+    api.get("/random")
     .then((response) => {
       setBeer(response.data[0]);
       setSpinnerLoading(false)    

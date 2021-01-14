@@ -1,5 +1,4 @@
-import React, { useEffect, useState, forwardRef } from 'react';
-
+import React, { forwardRef } from 'react';
 import MaterialTable from 'material-table';
 import {Link} from "react-router-dom";
 import './Table.css';
@@ -38,26 +37,22 @@ function Table({beers}) {
         { title: 'First brewed', field: 'first_brewed', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.first_brewed}</Link>},
         { title: 'abv', field: 'abv', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.abv}</Link>},
         { title: 'ibu', field: 'ibu', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.ibu}</Link>},
-        { title: 'ebc', field: 'ebc', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.ebc}</Link>},            
+        { title: 'ebc', field: 'ebc', render: rowData => <Link to={`/beers/${rowData.id}`}>{rowData.ebc}</Link>},
         ]}
         data = {beers}
-        options={
-            {
-              search: true
-            },
-            {
-              paging:true,
-              pageSize:10,
-              emptyRowsWhenPaging: true,
-              pageSizeOptions:[10,20,30,40],
-            },
-            {
-              headerStyle: {
-                backgroundColor: '#31357F',
-                color: '#FFF',
-                fontWeight: 'bold'
-                }
-            }
+        options = {
+          {
+            search: true,
+            paging:true,
+            pageSize:10,
+            emptyRowsWhenPaging: true,
+            pageSizeOptions:[10,20,30,40],
+            headerStyle: {
+              backgroundColor: '#31357F',
+              color: '#FFF',
+              fontWeight: 'bold'
+            }  
+          }
         }
         icons={tableIcons}
         />
