@@ -45,7 +45,7 @@ h2, h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #FC880C;
+    background-color: #FCA824;
     border-radius: 5px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -70,7 +70,7 @@ h2, h3 {
     align-items: center;
     font-size: 50px;
     text-align: center;
-    background-color:#FFBF59 ;
+    background-color:rgba(245, 183, 82, 0.233);
     border-radius: 5px;
     border-top: none;
 }
@@ -117,16 +117,16 @@ li::before {
     position: absolute;
     left: -20px;
     top: 22px;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
-    background-color: rgb(255, 195, 65);
+    background-color: #FCA824;
 }
 
 .charts-container {
     width: 25vw;
     height: 100%;
-    background-color: blue;
+    margin-top: 50px;
 }
 
 /* .brewed::before {

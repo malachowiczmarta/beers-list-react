@@ -1,4 +1,5 @@
 import React from 'react';
+import ChartContainer from '../chart/ChartContainer';
 import './BeerDetails.css'
 
 function BeerDetails({data}) {
@@ -45,6 +46,7 @@ function BeerDetails({data}) {
           <ul>
             <li>First brewed: {data.first_brewed}</li>
             <li>{data.description}</li>
+            <li>Yeast: {data.ingredients.yeast}</li>
             <li>{data.food_pairing}</li>
             <li>{data.brewers_tips}</li>
           </ul>
@@ -55,7 +57,8 @@ function BeerDetails({data}) {
         <div className="grid-item-desc"></div>
       </div>
       <div className="charts-container">
-        {/* <Chart /> */}
+        <ChartContainer data={data.ingredients.malt} type="Malt"/>
+        <ChartContainer data={data.ingredients.hops} type="Hops"/>
       </div>
     </div>
 
