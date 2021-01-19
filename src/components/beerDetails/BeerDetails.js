@@ -22,7 +22,7 @@ function BeerDetails({data}) {
         </div>
 
         <div className="grid-item-abv">
-          <p className="number">{data.abv}</p>
+          <p className="number">{data.abv}%</p>
         </div>
         <div className="grid-item"></div>
         <div className="grid-item-ibu">

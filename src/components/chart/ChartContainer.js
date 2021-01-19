@@ -34,7 +34,7 @@ function ChartContainer({data, type}) {
         options={{
           title: `Types of ${type}`,
           sliceVisibilityThreshold: 0.1,
-          colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+          colors: ['#D06400', '#FC880F', '#FDB23E', '#f8b95b', '#f1c685'],
           fontSize: 16
         }}
         rootProps={{ 'data-testid': '7' }}
