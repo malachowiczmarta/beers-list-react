@@ -2,9 +2,9 @@ import React from 'react';
 import "./Button.css"
 
 
-function Button({label, icon}) {
+function Button({label, icon, onAddFavClick}) {
   return (
-    <button>{icon} {label}</button>
+    <button onClick={onAddFavClick}>{icon} {label}</button>
   );
 }
 

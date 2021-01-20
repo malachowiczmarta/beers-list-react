@@ -15,7 +15,7 @@ import Nav from './components/navigation/Nav';
 import Beer from './pages/beer/Beer';
 import Random from './pages/random/Random';
 import Beers from './pages/beers/containers/Beers';
-import Favorite from './pages/favorite/components/Favorite';
+import FavoriteContainer from './pages/favorite/components/FavoriteContainer';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
@@ -36,7 +36,7 @@ function App() {
               <Random />
             </Route>
             <Route path="/favorite">
-              <Favorite />
+              <FavoriteContainer />
             </Route>
             <Route path="/">
               <Home />

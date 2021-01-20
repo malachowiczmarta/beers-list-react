@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   useParams,
   Link
@@ -9,45 +9,25 @@ import { connect } from "react-redux";
 import Loader from "react-loader-spinner";
 import BeerDetails from '../../components/beerDetails/BeerDetails';
 import './Beer.css';
-import Button from '../../components/button/Button';
 import { BiArrowBack } from "react-icons/bi";
-import { FaRegHeart } from "react-icons/fa";
+import AddFav from '../../ui/containers/AddFav';
 
 function Beer(props) {
   let {id} = useParams();
-  // const [beer, setBeer] = useState("");
-  // const [spinnerLoading, setSpinnerLoading] = useState(true);
-  // const [hasError, setError] = useState(false);
 
   const {beers} = props;
   console.log(beers)
 
   const beer = beers.filter(function (item) {
-    return item.id == id;
+    return item.id === Number(id);
   });
 
-  console.log(beer)
-
-
-  // useEffect(() => {
-  //   getBeer(beers)
-
-  //   console.log(beer)
-  //   // api.get(`/${id}`)
-  //   // .then(response => {
-  //   //   setBeer(response.data[0]);  
-  //   //   setSpinnerLoading(false)})
-  //   //   .catch(error => {
-  //   //     setError(true);
-  //   //     setSpinnerLoading(false);
-  //   //   })
-  // }, [beers, id]);
   
   return (
     <>
       <div className="link-container">
         <Link to="/table"><span><BiArrowBack /> back to the list</span></Link>
-        <Button label="add to the favorite" icon={<FaRegHeart />}/>
+        <AddFav data={beer[0]}/>
       </div>
         {props.isError && <p>An error has occurred, try later</p>}
         {
