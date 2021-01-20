@@ -1,4 +1,5 @@
 import React from 'react';
+import "./FavoriteContainer.css"
 import { connect } from "react-redux";
 
 
@@ -7,7 +8,7 @@ function FavoriteContainer(props) {
   console.log(props)
   return (
     <div className="favorite-container">
-        <p>Yours favorite beers:</p>
+        <h2>Yours favorite beers:</h2>
         <ul>
           {props.favorite.map(beer => {
             return <li key={`fav-${beer.id}`}>{beer.name}</li>
