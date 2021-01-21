@@ -1,23 +1,30 @@
 import React from 'react';
 import "./FavoriteContainer.css"
 import { connect } from "react-redux";
+import { deleteBeer } from "../../../ui/redux"
 import { AiFillDelete } from "react-icons/ai";
 import Button from '../../../components/button/Button';
 
 
 function FavoriteContainer(props) {
 
+  function handleDelete(elem) {
+    console.log(elem)
+    props.deleteBeer(elem)
+    console.log(props.favorite)
+  }
+
   console.log(props)
   return (
     <div className="favorite-container">
         <h2>Yours favorite beers:</h2>
         <div>
-          {props.favorite.map(beer => {
+          {props.favorite.map((beer, index) => {
             return (
-            <div key={`fav-${beer.id}`} className="fav-item-wrapper">
+            <div key={`fav-${index}`} className="fav-item-wrapper">
               <div className="fav-item-container">
                 <h3>{beer.name}</h3>
-                <Button type="delete" icon={<AiFillDelete/>}/>
+                <Button type="delete" icon={<AiFillDelete/>} onDelete={() => handleDelete(beer)}/>
               </div>
             </div>
             )
@@ -35,5 +42,9 @@ const mapStateToProps = (state) => {
   };
 };
 
+const mapDispatchToPros = {
+  deleteBeer
+}
 
-export default connect(mapStateToProps)(FavoriteContainer);
+
+export default connect(mapStateToProps, mapDispatchToPros)(FavoriteContainer);

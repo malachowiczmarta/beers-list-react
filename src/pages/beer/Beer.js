@@ -14,10 +14,7 @@ import AddFav from '../../ui/containers/AddFav';
 
 function Beer(props) {
   let {id} = useParams();
-
   const {beers} = props;
-  console.log(beers)
-
   const beer = beers.filter(function (item) {
     return item.id === Number(id);
   });
