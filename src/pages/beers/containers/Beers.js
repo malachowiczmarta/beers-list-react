@@ -1,36 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+
+import { connect } from "react-redux";
+import { fetchBeers } from "../redux";
+
 import Loader from "react-loader-spinner";
-import api from '../../../api';
-import Table from '../components/Table'
+import Table from '../components/Table';
 
 
-function Beers() {
-    const [beersList, setBeersList] = useState([]);
-    const [spinnerLoading, setSpinnerLoading] = useState(true);
-    const [hasError, setError] = useState(false);
-
+function Beers(props) {
+    const fetchBeers = props.fetchBeers;
     useEffect(() => {
-        api.get("?page=1&per_page=80")
-        .then((response) => {
-          setBeersList(response.data);
-          setSpinnerLoading(false)  
-        })
-        .catch(error => {
-          setError(true);
-          setSpinnerLoading(false);
-        })
-    }, []);
-
+        fetchBeers();
+    }, [fetchBeers]);
 
   return (
       <div className="beers-container">
-        {hasError && <p>An error has occurred, try later</p>}
-        {spinnerLoading ? <Loader type="ThreeDots" color="#31357F" height={100} width={100} /> :
-          <Table beers={beersList}/>
+        {props.isError && <p>An error has occurred, try later</p>}
+        {props.isLoading ? <Loader type="ThreeDots" color="#31357F" height={100} width={100} /> :
+          <Table beers={props.beers}/>
         }
       </div>
 
   );
 }
 
-export default Beers;
+const mapStateToProps = (state) => {
+  return {
+    beers: state.beers.beers,
+    isLoading: state.beers.isLoading,
+    isError: state.beers.isError
+  };
+};
+
+const mapDispatchToProps = {
+  fetchBeers,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Beers);

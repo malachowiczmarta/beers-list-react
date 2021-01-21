@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+
+// import { connect } from "react-redux";
+
 import BeerDetails from '../../components/beerDetails/BeerDetails';
+import AddFav from '../../ui/containers/AddFav'
 import api from '../../api';
 import Loader from "react-loader-spinner";
 import './Random.css';
-import Button from '../../components/button/Button';
-import { FaRegHeart } from "react-icons/fa";
+
 
 
 
@@ -34,7 +37,7 @@ function Random() {
         spinnerLoading ? <Loader type="ThreeDots" color="#31357F" height={100} width={100} /> :
           <>
             <div className="add-btn-container">
-              <Button label="add to the favorite" icon={<FaRegHeart />}/>
+            <AddFav data={beer}/>
             </div>
             <BeerDetails data={beer}/>
           </>

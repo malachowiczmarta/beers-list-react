@@ -10,9 +10,6 @@ function ChartContainer({data, type}) {
     return [item.name, item.amount.value]
   });
 
-  console.log(data)
-  console.log(chartData)
-
   if(type === "Malt") {
     chartData.unshift([type, "kilograms"])
   }
@@ -20,8 +17,6 @@ function ChartContainer({data, type}) {
   if(type === "Hops") {
     chartData.unshift([type, "grams"])
   }
-
-  console.log(chartData)
 
   return (
     <>

@@ -14,10 +14,10 @@ function Home() {
           labore et dolore.
         </p>
         <Link to="/beers">
-          <Button label="get beers list"/>
+          <Button type="get" label="get beers list"/>
         </Link>
         <Link to="/random">
-          <Button label="get random beer"/>
+          <Button type="get" label="get random beer"/>
         </Link>
       </article>
       </section>
