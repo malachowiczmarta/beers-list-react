@@ -1,19 +1,28 @@
-button {
+.btn-fav, .btn-get {
     background-color: #31357F; 
     border: none;
     border-radius: 25px;
     color: white;
-    padding: 16px 32px;
+    padding: 16px 30px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 20px;
+    font-size: 18px;
     margin: 4px 10px;
     transition-duration: 0.4s;
     cursor: pointer;
 }
-  
-button:hover {
+
+.btn-fav:hover, .btn-get:hover {
     background-color: #191C47; 
     color: white; 
 }
+
+.btn-delete {
+    border-style: none;
+    background-color: transparent;
+    font-size: 25px;
+    cursor: pointer;
+    color: #191C47;
+}
+

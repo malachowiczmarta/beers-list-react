@@ -26,7 +26,7 @@ function Beer(props) {
   return (
     <>
       <div className="link-container">
-        <Link to="/table"><span><BiArrowBack /> back to the list</span></Link>
+        <Link to="/beers"><BiArrowBack/> <p>back to the list</p></Link>
         <AddFav data={beer[0]}/>
       </div>
         {props.isError && <p>An error has occurred, try later</p>}

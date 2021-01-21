@@ -128,19 +128,3 @@ li::before {
     height: 100%;
     margin-top: 50px;
 }
-
-/* .brewed::before {
-    background-image: url(../img/distillatory.png);
-}
-
-.description::before {
-    background-image: url(../img/information.png);
-}
-
-.food_pairing::before {
-    background-image: url(../img/restaurant.png);
-}
-
-.brewers_tips::before {
-    background-image: url(../img/light-bulb.png);
-} */

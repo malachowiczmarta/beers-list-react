@@ -9,19 +9,31 @@ import { FaRegHeart } from "react-icons/fa";
 function AddFav(props) {
 
     const handleClick = (beer) => {
-        props.add(beer);
+      if (!props.favorite.includes(beer)) {
+        console.log("dodano do listy")
+        return props.add(beer);
+      }
+      return console.log("juz jest na liście")
     };
 
 
   return (
     <>
-        <Button label="add to the favorite" icon={<FaRegHeart />} onAddFavClick={() => handleClick(props.data)}/>
+        <Button type="fav" label="add to the favorite" icon={<FaRegHeart />} onAddFavClick={() => handleClick(props.data)}/>
     </>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    favorite: state.favorite.favorite,
+    isLoading: state.favorite.isLoading,
+    isError: state.favorite.isError
+  };
+};
 
 const mapDispatchToPros = {
   add
 }
 
-export default connect(null, mapDispatchToPros)(AddFav);
+export default connect(mapStateToProps, mapDispatchToPros)(AddFav);
