@@ -1,3 +1,6 @@
+button {
+    outline:none;
+}
 .btn-fav, .btn-get {
     background-color: #31357F; 
     border: none;
@@ -16,6 +19,10 @@
 .btn-fav:hover, .btn-get:hover {
     background-color: #191C47; 
     color: white; 
+}
+
+.btn-fav {
+    position: relative;
 }
 
 .btn-delete {

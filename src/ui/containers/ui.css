@@ -1,0 +1,21 @@
+.alert-container {
+    width: 225px;
+    position: absolute;
+    border-radius: 5px;
+    padding: 10px 10px;
+    text-align: left;
+    display: block;
+    font-size: 16px;
+}
+
+.alert-success {
+    background-color: rgba(189, 219, 189, 0.562);
+    border: 1px solid rgb(5, 131, 5);
+    color: rgb(5, 131, 5);
+}
+
+.alert-info {
+    background-color: #bdd7e479;
+    border: 1px solid #178CF5;
+    color: #178CF5;
+}
