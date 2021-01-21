@@ -9,9 +9,7 @@ import Button from '../../../components/button/Button';
 function FavoriteContainer(props) {
 
   function handleDelete(elem) {
-    console.log(elem)
     props.deleteBeer(elem)
-    console.log(props.favorite)
   }
 
   console.log(props)
