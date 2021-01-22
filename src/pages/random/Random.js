@@ -34,7 +34,7 @@ function Random() {
     <>
       {hasError && <p>An error has occurred, try later</p>}
       {
-        spinnerLoading ? <Loader type="ThreeDots" color="#31357F" height={100} width={100} /> :
+        spinnerLoading ? <div className="loader-container"><Loader type="ThreeDots" color="#31357F" height={100} width={100} /></div> :
           <>
             <div className="add-btn-container">
             <AddFav data={beer}/>

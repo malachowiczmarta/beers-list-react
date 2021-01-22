@@ -23,14 +23,10 @@ function Beer(props) {
   return (
     <>
       <div className="link-container">
-        <Link to="/beers"><BiArrowBack/> <p>back to the list</p></Link>
+        <Link to="/beers"><BiArrowBack/> back to the list</Link>
         <AddFav data={beer[0]}/>
       </div>
-        {props.isError && <p>An error has occurred, try later</p>}
-        {
-          props.isLoading ? <Loader type="ThreeDots" color="#31357F" height={100} width={100} /> : 
-          <BeerDetails data={beer[0]}/>
-        }
+      <BeerDetails data={beer[0]}/>
     </>
   );
 }
@@ -38,8 +34,6 @@ function Beer(props) {
 const mapStateToProps = (state) => {
   return {
     beers: state.beers.beers,
-    isLoading: state.beers.isLoading,
-    isError: state.beers.isError
   };
 };
 
