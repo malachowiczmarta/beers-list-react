@@ -31,7 +31,6 @@ function AddFav(props) {
     <div className="addFav-container">
         <Button type="fav" label="add to the favorite" icon={<FaRegHeart />} onAddFavClick={() => handleClick(props.data)}/>
         {props.showAlert ? <Alert variant={props.alertType} icon={<BsCheckCircle />} /> : null}
-        {/* <Alert variant={variantAlert} icon={<BsCheckCircle />} /> */}
     </div>
   );
 }

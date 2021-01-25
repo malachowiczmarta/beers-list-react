@@ -12,7 +12,7 @@ function Nav() {
         <Link to="/"><p>Home</p></Link>
         <Link to="/favorite"><p>Favorite</p></Link>
       </div>
-      <p>sign in</p>
+      <Link to="/signin"><p>Sign In</p></Link>
 
     </div>
     </nav>

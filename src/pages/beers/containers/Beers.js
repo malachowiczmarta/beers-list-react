@@ -17,7 +17,7 @@ function Beers(props) {
       <div className="beers-container">
         {props.isError && <p>An error has occurred, try later</p>}
         {props.isLoading ? <div className="loader-container"><Loader type="ThreeDots" color="#31357F" height={100} width={100} /></div> :
-          <Table beers={props.beers}/>
+          <Table beers={props.beers}/> 
         }
       </div>
 

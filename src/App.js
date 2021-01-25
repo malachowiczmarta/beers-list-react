@@ -19,6 +19,7 @@ import Beer from './pages/beer/Beer';
 import Random from './pages/random/Random';
 import Beers from './pages/beers/containers/Beers';
 import FavoriteContainer from './pages/favorite/components/FavoriteContainer';
+import SignIn from './pages/signIn/SignIn';
 
 const persistConfig = {
   key: 'root',
@@ -50,15 +51,16 @@ function App() {
               <Route path="/favorite">
                 <FavoriteContainer />
               </Route>
+              <Route path="/signin">
+                <SignIn />
+              </Route>
               <Route path="/">
                 <Home />
               </Route>
             </Switch>
           </Router>
         </PersistGate>
-        
       </Provider>
-      
     </div>
   );
 }
