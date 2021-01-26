@@ -6,7 +6,6 @@ import {
 
 import { connect } from "react-redux";
 
-import Loader from "react-loader-spinner";
 import BeerDetails from '../../components/beerDetails/BeerDetails';
 import './Beer.css';
 import { BiArrowBack } from "react-icons/bi";

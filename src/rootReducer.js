@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import beersReducer from "./pages/beers/redux";
-import addFavReducer from "./ui/redux";
+import ui from "./ui/redux";
 
 const rootReducer = combineReducers({
   beers: beersReducer,
-  favorite: addFavReducer
+  ui: ui
 });
 
 export default rootReducer;

@@ -1,7 +1,8 @@
-const FAV_ADD = "addfav/FAV_ADD";
-const FAV_DELETE = "addfav/FAV_DELETE";
-const ALERT = "addfav/FAV_ALERT";
-const ALERT_TYPE = "addfav/FAV_ALERT_TYPE";
+const FAV_ADD = "ui/FAV_ADD";
+const FAV_DELETE = "ui/FAV_DELETE";
+const ALERT = "ui/FAV_ALERT";
+const ALERT_TYPE = "ui/FAV_ALERT_TYPE";
+const SHOW_MODAL = "ui/SHOW_MODAL";
 
 export function add(elem) {
     return {
@@ -30,10 +31,17 @@ export function setAlertType(type) {
   };
 };
 
+export function setModal() {
+  return {
+    type: SHOW_MODAL,
+  };
+};
+
 const INITIAL_STATE = {
     favorite: [],
     showAlert: false,
-    alertType: ""
+    alertType: "",
+    showModal: false
 };
 
 function reducer(state = INITIAL_STATE, action) {
@@ -48,6 +56,8 @@ function reducer(state = INITIAL_STATE, action) {
         return { ...state, showAlert: !state.showAlert };
       case ALERT_TYPE:
         return { ...state, alertType: action.payload };
+      case SHOW_MODAL:
+        return { ...state, showModal: !state.showModal };
       default:
         return state;
     }

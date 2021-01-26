@@ -37,9 +37,9 @@ function AddFav(props) {
 
 const mapStateToProps = (state) => {
   return {
-    favorite: state.favorite.favorite,
-    showAlert: state.favorite.showAlert,
-    alertType: state.favorite.alertType
+    favorite: state.ui.favorite,
+    showAlert: state.ui.showAlert,
+    alertType: state.ui.alertType
   };
 };
 

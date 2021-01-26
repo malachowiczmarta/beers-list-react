@@ -34,9 +34,9 @@ function FavoriteContainer(props) {
 
 const mapStateToProps = (state) => {
   return {
-    favorite: state.favorite.favorite,
-    isLoading: state.favorite.isLoading,
-    isError: state.favorite.isError
+    favorite: state.ui.favorite,
+    isLoading: state.ui.isLoading,
+    isError: state.ui.isError
   };
 };
 

@@ -14,12 +14,11 @@ import storage from 'redux-persist/lib/storage'
 import { PersistGate } from 'redux-persist/integration/react'
 
 import rootReducer from "./rootReducer";
-import Nav from './components/navigation/Nav';
+import Nav from './ui/navigation/Nav';
 import Beer from './pages/beer/Beer';
 import Random from './pages/random/Random';
 import Beers from './pages/beers/containers/Beers';
 import FavoriteContainer from './pages/favorite/components/FavoriteContainer';
-import SignIn from './pages/signIn/SignIn';
 
 const persistConfig = {
   key: 'root',
@@ -50,9 +49,6 @@ function App() {
               </Route>
               <Route path="/favorite">
                 <FavoriteContainer />
-              </Route>
-              <Route path="/signin">
-                <SignIn />
               </Route>
               <Route path="/">
                 <Home />

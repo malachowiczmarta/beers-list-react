@@ -1,0 +1,28 @@
+.sign-container {
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sign-container > h2 {
+    color: white;
+    line-height: 1.15;
+    font-size: 40px;
+    margin: 50px auto;
+}
+
+input {
+    outline:none;
+    display: block;
+    margin-bottom: 20px;
+    width: 400px;
+    padding: 16px 20px;
+    background-color: transparent;
+    box-sizing: border-box;
+    border: 1px white solid;
+    border-radius: 25px;
+    color: white;
+}
