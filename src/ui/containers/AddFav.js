@@ -31,16 +31,15 @@ function AddFav(props) {
     <div className="addFav-container">
         <Button type="fav" label="add to the favorite" icon={<FaRegHeart />} onAddFavClick={() => handleClick(props.data)}/>
         {props.showAlert ? <Alert variant={props.alertType} icon={<BsCheckCircle />} /> : null}
-        {/* <Alert variant={variantAlert} icon={<BsCheckCircle />} /> */}
     </div>
   );
 }
 
 const mapStateToProps = (state) => {
   return {
-    favorite: state.favorite.favorite,
-    showAlert: state.favorite.showAlert,
-    alertType: state.favorite.alertType
+    favorite: state.ui.favorite,
+    showAlert: state.ui.showAlert,
+    alertType: state.ui.alertType
   };
 };
 

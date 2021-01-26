@@ -1,5 +1,7 @@
 button {
     outline:none;
+    font-size: 16px;
+    cursor: pointer;
 }
 .btn-fav, .btn-get {
     background-color: #31357F; 
@@ -13,7 +15,6 @@ button {
     font-size: 18px;
     margin: 4px 10px;
     transition-duration: 0.4s;
-    cursor: pointer;
 }
 
 .btn-fav:hover, .btn-get:hover {
@@ -23,14 +24,34 @@ button {
 
 .btn-fav {
     position: relative;
-    font-size: 16px;
 }
 
-.btn-delete {
+.btn-delete, .btn-sign, .btn-close {
     border-style: none;
     background-color: transparent;
     font-size: 25px;
-    cursor: pointer;
+    color: #191C47;
+}
+
+.btn-sign {
+    font-size: 16px;
+}
+
+.btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px;
+}
+
+.btn-submit {
+    margin-bottom: 20px;
+    width: 400px;
+    padding: 16px 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    border: 1px white solid;
+    border-radius: 25px;
     color: #191C47;
 }
 
