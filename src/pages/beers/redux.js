@@ -16,10 +16,10 @@ const fetchBeersSucceded = (data) => ({
 });
 
 
-export const fetchBeers = () => {
+export const fetchBeers = (page, rows) => {
   return function (dispatch) {
     dispatch(fetchRequested());
-    fetch("https://api.punkapi.com/v2/beers?page=1&per_page=80")
+    fetch(`https://api.punkapi.com/v2/beers?page=${page}&per_page=${rows}`)
       .then((response) => response.json())
       .then((data) => {
         dispatch(fetchBeersSucceded(data));
