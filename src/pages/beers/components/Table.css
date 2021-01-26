@@ -34,3 +34,10 @@ th {
     background-color: #191C47;
     color: white;
 }
+
+.table-pagination-container {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
