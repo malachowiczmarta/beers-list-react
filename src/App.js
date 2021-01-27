@@ -6,12 +6,12 @@ import {
   Route,
 } from "react-router-dom";
 
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
-import { persistStore, persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage' 
-import { PersistGate } from 'redux-persist/integration/react'
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import { PersistGate } from 'redux-persist/integration/react';
 
 import rootReducer from "./rootReducer";
 import Nav from './ui/navigation/Nav';
@@ -23,12 +23,15 @@ import FavoriteContainer from './pages/favorite/components/FavoriteContainer';
 const persistConfig = {
   key: 'root',
   storage: storage,
-  whitelist: ['favorite'] 
+  whitelist: ['beers', 'ui']
 };
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+const persistedReducer = persistReducer(persistConfig, rootReducer),
+  composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose,
+  store = createStore(persistedReducer, /* preloadedState, */ composeEnhancers(
+    applyMiddleware(thunk)
+  ));
 
-const store = createStore(persistedReducer, applyMiddleware(thunk));
-let persistor = persistStore(store)
+let persistor = persistStore(store);
 
 function App() {
   return (
