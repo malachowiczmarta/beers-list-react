@@ -2,10 +2,17 @@ const FETCH_BEERS_REQUESTED = "beers/FETCH_BEERS_REQUESTED";
 const FETCH_BEERS_SUCCEDED = "beers/FETCH_BEERS_SUCCEDED";
 const FETCH_BEERS_FAILED = "beers/FETCH_BEERS_FAILED";
 
+// const PAGE_NUMBER = "beers/PAGE_NUMBER";
+const SET_PAGE_NUMBER = "beers/SET_PAGE_NUMBER";
+// const ROWS_PER_PAGE = "beers/ROWS_PER_PAGE";
+const SET_ROWS_PER_PAGE = "beers/SET_ROWS_PER_PAGE";
+
 const INITIAL_STATE = {
   beers: [],
   isLoading: false,
-  isError: false
+  isError: false,
+  page: 0,
+  rows: 10
 };
 
 const fetchRequested = () => ({ type: FETCH_BEERS_REQUESTED });
@@ -15,11 +22,11 @@ const fetchBeersSucceded = (data) => ({
   payload: data
 });
 
-
-export const fetchBeers = () => {
+export const fetchBeers = (page, rows) => {
   return function (dispatch) {
     dispatch(fetchRequested());
-    fetch("https://api.punkapi.com/v2/beers?page=1&per_page=80")
+    const punkApiPage = page + 1;
+    fetch(`https://api.punkapi.com/v2/beers?page=${punkApiPage}&per_page=${rows}`)
       .then((response) => response.json())
       .then((data) => {
         dispatch(fetchBeersSucceded(data));
@@ -29,6 +36,16 @@ export const fetchBeers = () => {
       });
   };
 };
+
+export const setPage = (data) => ({
+  type: SET_PAGE_NUMBER,
+  payload: data
+});
+
+export const setRows = (data) => ({
+  type: SET_ROWS_PER_PAGE,
+  payload: data
+});
 
 
 function reducer(state = INITIAL_STATE, action) {
@@ -52,6 +69,16 @@ function reducer(state = INITIAL_STATE, action) {
         isLoading: false,
         isError: true
       };
+    case SET_PAGE_NUMBER:
+      return {
+        ...state,
+        page: action.payload
+      };
+      case SET_ROWS_PER_PAGE:
+        return {
+          ...state,
+          page: action.payload
+        };
     default:
       return state;
   }

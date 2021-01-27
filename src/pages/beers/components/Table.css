@@ -4,8 +4,40 @@ a {
 }
 
 .table-container {
-    width: 80%;
+    width: 100%;
     margin: 30px auto;
     display: flex;
     justify-content: center;
+}
+
+table {
+    font-family: Verdana;
+    font-size: 14px;
+    border-collapse: collapse;
+    width: 900px;
+    max-width: 100%;
+}
+
+td, th {
+    padding: 10px;
+    text-align: left;
+    margin: 0;
+}
+
+tbody tr:nth-child(2n){
+    background-color: rgba(165, 171, 240, 0.445);
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background-color: #191C47;
+    color: white;
+}
+
+.table-pagination-container {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
