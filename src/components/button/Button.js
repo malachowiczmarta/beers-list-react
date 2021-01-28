@@ -2,7 +2,7 @@ import React from 'react';
 import "./Button.css"
 
 
-function Button({label, icon = null, type, onAddFavClick, onDelete, onSignIn, onClose}) {
+function Button({label, icon = null, type, onAddFavClick, onDelete, onSign, onClose}) {
   let buttonClassName = "btn";
   let handleClick
   if (type === "delete") {
@@ -13,7 +13,7 @@ function Button({label, icon = null, type, onAddFavClick, onDelete, onSignIn, on
     handleClick = onAddFavClick
   } else if (type === "sign") {
     buttonClassName += "-sign";
-    handleClick = onSignIn
+    handleClick = onSign
   } else if (type === "close") {
     buttonClassName += "-close";
     handleClick = onClose

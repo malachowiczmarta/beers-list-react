@@ -14,8 +14,8 @@ nav {
     justify-content: space-between;
 }
 
-.nav-links {
-    width: 14%;
+.nav-links, .sign-out-component {
+    width: 19%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,10 +26,6 @@ nav {
     font-size: 20px;
     color: #191C47; 
 }
-
-
-
-
 
 .alert-container {
     width: 225px;

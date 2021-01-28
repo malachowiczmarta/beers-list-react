@@ -23,7 +23,7 @@ import FavoriteContainer from './pages/favorite/components/FavoriteContainer';
 const persistConfig = {
   key: 'root',
   storage: storage,
-  whitelist: ['beers', 'ui']
+  whitelist: ['beers', 'ui', 'auth']
 };
 const persistedReducer = persistReducer(persistConfig, rootReducer),
   composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose,

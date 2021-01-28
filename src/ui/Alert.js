@@ -19,6 +19,4 @@ function Alert({icon, variant}) {
     );
 }
 
-
-
 export default Alert;
