@@ -9,7 +9,7 @@ import { connect } from "react-redux";
 import BeerDetails from '../../components/beerDetails/BeerDetails';
 import './Beer.css';
 import { BiArrowBack } from "react-icons/bi";
-import AddFav from '../../ui/containers/AddFav';
+import AddFav from '../../ui/AddFav';
 
 function Beer(props) {
   let {id} = useParams();

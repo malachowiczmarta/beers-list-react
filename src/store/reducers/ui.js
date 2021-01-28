@@ -4,6 +4,13 @@ const ALERT = "ui/FAV_ALERT";
 const ALERT_TYPE = "ui/FAV_ALERT_TYPE";
 const SHOW_MODAL = "ui/SHOW_MODAL";
 
+const INITIAL_STATE = {
+  favorite: [],
+  showAlert: false,
+  alertType: "",
+  showModal: false
+};
+
 export function add(elem) {
     return {
       type: FAV_ADD,
@@ -37,12 +44,7 @@ export function setModal() {
   };
 };
 
-const INITIAL_STATE = {
-    favorite: [],
-    showAlert: false,
-    alertType: "",
-    showModal: false
-};
+
 
 function reducer(state = INITIAL_STATE, action) {
     switch (action.type) {

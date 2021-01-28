@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { connect } from "react-redux";
-import { fetchBeers, setPage, setRows } from "../redux";
+import { fetchBeers, setPage, setRows } from "../../../store/reducers/beers";
 
 import Loader from "react-loader-spinner";
 import Table from '../components/Table';
@@ -19,7 +19,6 @@ function Beers(props) {
 
     const handleChangePage = (event, newPage) => {
       props.setPage(newPage);
-      console.log(newPage)
     };
 
     const handleChangeRowsPerPage = (event) => {
