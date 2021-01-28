@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import fakeAuth from "fake-auth";
 import "./SigninComponent.css"
-import Button from "../../components/button/Button";
+import Button from "../button/Button";
 import {connect} from "react-redux";
 import {initAuthentication, setAuthError} from "../../store/reducers/auth";
-import {setModal} from "../../ui/redux";
+import {setModal} from "../../store/reducers/ui";
 import {authErrorSelector, authLoadingSelector} from "../../store/selectors/authSelectors";
 
 

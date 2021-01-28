@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { add, alert, setAlertType } from '../redux';
-import Button from '../../components/button/Button';
+import { add, alert, setAlertType } from '../store/reducers/ui';
+import Button from '../components/button/Button';
 import { FaRegHeart } from "react-icons/fa";
 import { BsCheckCircle } from "react-icons/bs";
 import Alert from './Alert';

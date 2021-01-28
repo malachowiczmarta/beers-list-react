@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-// import { connect } from "react-redux";
-
 import BeerDetails from '../../components/beerDetails/BeerDetails';
-import AddFav from '../../ui/containers/AddFav'
+import AddFav from '../../ui/AddFav'
 import api from '../../api';
 import Loader from "react-loader-spinner";
 import './Random.css';

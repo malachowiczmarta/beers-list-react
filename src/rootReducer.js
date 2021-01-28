@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import beersReducer from "./pages/beers/redux";
-import ui from "./ui/redux";
+import beersReducer from "./store/reducers/beers";
+import ui from "./store/reducers/ui";
 import auth from "./store/reducers/auth";
 
 const rootReducer = combineReducers({

@@ -1,5 +1,4 @@
 import './App.css';
-import Home from './pages/home/Home';
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,7 +13,8 @@ import storage from 'redux-persist/lib/storage';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import rootReducer from "./rootReducer";
-import Nav from './ui/navigation/Nav';
+import Home from './pages/home/Home';
+import Nav from './ui/Nav';
 import Beer from './pages/beer/Beer';
 import Random from './pages/random/Random';
 import Beers from './pages/beers/containers/Beers';
@@ -32,6 +32,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer),
   ));
 
 let persistor = persistStore(store);
+
 
 function App() {
   return (

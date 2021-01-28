@@ -1,7 +1,7 @@
 import React from 'react';
 import "./FavoriteContainer.css"
 import { connect } from "react-redux";
-import { deleteBeer } from "../../../ui/redux"
+import { deleteBeer } from "../../../store/reducers/ui"
 import { AiFillDelete } from "react-icons/ai";
 import Button from '../../../components/button/Button';
 
@@ -12,7 +12,6 @@ function FavoriteContainer(props) {
     props.deleteBeer(elem)
   }
 
-  console.log(props)
   return (
     <div className="favorite-container">
         <h2>Yours favorite beers:</h2>

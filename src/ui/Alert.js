@@ -7,8 +7,7 @@ function Alert({icon, variant}) {
     if (variant === "success") {
         label = " Added to the list";
         style += " alert-success";
-        console.log(style)
-    }else if (variant === "info") {
+    } else if (variant === "info") {
         label = " Already exists in the list";
         style += " alert-info";
     }

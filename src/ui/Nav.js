@@ -1,21 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { setModal } from '../redux';
+import { setModal } from '../store/reducers/ui';
 import {Link} from 'react-router-dom';
-import Button from '../../components/button/Button';
-import "./Nav.css"
-import Modal from '../containers/Modal'
-import SigninComponent from '../../pages/SigninComponent/SigninComponent';
+import Button from '../components/button/Button';
+import "./ui.css"
+import Modal from './Modal'
+import SigninComponent from '../components/SigninComponent/SigninComponent';
 import { GrClose } from "react-icons/gr";
-import {emailSelector, isAuthenticatedSelector} from "../../store/selectors/authSelectors";
+import {emailSelector, isAuthenticatedSelector} from "../store/selectors/authSelectors";
 
 
 function Nav(props) {
 
   const handleClick = () => {
     props.setModal();
-    console.log("click hhh")
   };
 
   return (

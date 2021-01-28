@@ -2,9 +2,7 @@ const FETCH_BEERS_REQUESTED = "beers/FETCH_BEERS_REQUESTED";
 const FETCH_BEERS_SUCCEDED = "beers/FETCH_BEERS_SUCCEDED";
 const FETCH_BEERS_FAILED = "beers/FETCH_BEERS_FAILED";
 
-// const PAGE_NUMBER = "beers/PAGE_NUMBER";
 const SET_PAGE_NUMBER = "beers/SET_PAGE_NUMBER";
-// const ROWS_PER_PAGE = "beers/ROWS_PER_PAGE";
 const SET_ROWS_PER_PAGE = "beers/SET_ROWS_PER_PAGE";
 
 const INITIAL_STATE = {
@@ -15,6 +13,7 @@ const INITIAL_STATE = {
   rows: 10
 };
 
+
 const fetchRequested = () => ({ type: FETCH_BEERS_REQUESTED });
 const fetchFailed = () => ({ type: FETCH_BEERS_FAILED });
 const fetchBeersSucceded = (data) => ({
@@ -23,6 +22,7 @@ const fetchBeersSucceded = (data) => ({
 });
 
 export const fetchBeers = (page, rows) => {
+  console.log("Fetch beers");
   return function (dispatch) {
     dispatch(fetchRequested());
     const punkApiPage = page + 1;
@@ -67,7 +67,9 @@ function reducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         isLoading: false,
-        isError: true
+        isError: true,
+        page: INITIAL_STATE.page,
+        rows: INITIAL_STATE.rows
       };
     case SET_PAGE_NUMBER:
       return {
