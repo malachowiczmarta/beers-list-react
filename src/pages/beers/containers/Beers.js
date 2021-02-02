@@ -6,6 +6,7 @@ import { fetchBeers, setPage, setRows } from "../../../store/reducers/beers";
 import Loader from "react-loader-spinner";
 import Table from '../components/Table';
 import PaginationContainer from '../components/PaginationContainer';
+import './Beers.css';
 
 
 function Beers(props) {
