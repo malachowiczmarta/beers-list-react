@@ -56,8 +56,8 @@ function Nav(props) {
           <div className="nav-container">
             <p className="logo">cheers beers</p>
             <div className="nav-links">
-              <Link to="/"><p>Home</p></Link>
-              <Link to="/favorite"><p>Favorite</p></Link>
+              <Link to="/">Home</Link>
+              <Link to="/favorite">Favorite</Link>
             </div>
             {
               props.isAuthenticated && props.email ?

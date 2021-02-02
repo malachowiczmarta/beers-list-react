@@ -2,10 +2,10 @@ button {
     outline:none;
     font-size: 16px;
     cursor: pointer;
+    border: none;
 }
 .btn-fav, .btn-get {
     background-color: #31357F; 
-    border: none;
     border-radius: 25px;
     color: white;
     padding: 16px 25px;
@@ -15,6 +15,7 @@ button {
     font-size: 18px;
     margin: 4px 10px;
     transition-duration: 0.4s;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.17);
 }
 
 .btn-fav:hover, .btn-get:hover {
@@ -42,16 +43,21 @@ button {
     top: 0;
     right: 0;
     margin: 15px;
+    /* fill: rgb(232, 240, 254); */
 }
 
 .btn-submit {
     margin-bottom: 20px;
     width: 400px;
     padding: 16px 20px;
-    background-color: #ffffff;
+    background-color: rgb(211, 211, 230);
     box-sizing: border-box;
-    border: 1px white solid;
     border-radius: 25px;
-    color: #191C47;
+    color: rgb(43, 42, 42);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.17);
+    transition-duration: 0.4s;
+}
+.btn-submit:hover {
+    background-color: rgb(184, 184, 221);
 }
 

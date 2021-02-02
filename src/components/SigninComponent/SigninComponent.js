@@ -40,7 +40,7 @@ function SigninComponent(props) {
                     handleSubmit(email, pass, event);
                 }}
             >
-                {error && <p>{error.message}</p>}
+                {error && <p className="para-error">{error.message}</p>}
 
                 <input type="email" name="email" placeholder="email" />
                 <input type="password" name="pass" placeholder="password" />

@@ -6,10 +6,10 @@ import './Home.css';
 function Home() {
   return (
     <div className="home-container">
-      <section className="landing-pg-container">
+      <main className="landing-pg-container">
       <article>
         <h1>Beers list</h1>
-        <p>
+        <p className="main-para">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
           labore et dolore.
         </p>
@@ -20,7 +20,7 @@ function Home() {
           <Button type="get" label="get random beer"/>
         </Link>
       </article>
-      </section>
+      </main>
      <a href='https://www.freepik.com/vectors/party'>Party vector created by pch.vector - www.freepik.com</a> 
     </div>
   );
