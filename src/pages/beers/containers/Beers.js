@@ -24,7 +24,7 @@ function Beers(props) {
 
     const handleChangeRowsPerPage = (event) => {
       props.setRows(parseInt(event.target.value, 10));
-      props.setPage(1);
+      props.setPage(0);
     };
 
   return (

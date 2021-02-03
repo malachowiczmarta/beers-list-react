@@ -79,7 +79,7 @@ function reducer(state = INITIAL_STATE, action) {
       case SET_ROWS_PER_PAGE:
         return {
           ...state,
-          page: action.payload
+          rows: action.payload
         };
     default:
       return state;
