@@ -4,16 +4,13 @@ import { connect } from 'react-redux';
 import { add, alert, setAlertType } from '../store/reducers/ui';
 import Button from '../components/button/Button';
 import { FaRegHeart } from "react-icons/fa";
-import { BsCheckCircle } from "react-icons/bs";
-import Alert from './Alert';
-
 
 
 function AddFav(props) {
 
     const handleClick = (beer) => {
       if (!props.favorite.includes(beer)) {
-        props.setAlertType("success")
+        props.setAlertType("add")
         props.add(beer);
         props.alert();
         const timer = setTimeout(() => props.alert(), 2000);
@@ -26,11 +23,9 @@ function AddFav(props) {
 
     };
 
-
   return (
     <div className="addFav-container">
         <Button type="fav" label="add to the favorite" icon={<FaRegHeart />} onAddFavClick={() => handleClick(props.data)}/>
-        {props.showAlert ? <Alert variant={props.alertType} icon={<BsCheckCircle />} /> : null}
     </div>
   );
 }

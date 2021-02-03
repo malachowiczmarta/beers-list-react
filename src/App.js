@@ -19,6 +19,7 @@ import Beer from './pages/beer/Beer';
 import Random from './pages/random/Random';
 import Beers from './pages/beers/containers/Beers';
 import FavoriteContainer from './pages/favorite/components/FavoriteContainer';
+import Alert from './ui/Alert';
 
 const persistConfig = {
   key: 'root',
@@ -33,7 +34,6 @@ const persistedReducer = persistReducer(persistConfig, rootReducer),
 
 let persistor = persistStore(store);
 
-
 function App() {
   return (
     <div className="App">
@@ -41,6 +41,7 @@ function App() {
         <PersistGate loading={null} persistor={persistor}>
           <Router>
             <Nav />
+            <Alert />
             <Switch>
               <Route path="/beers/:id">
                 <Beer />

@@ -29,29 +29,26 @@ nav {
 }
 
 .alert-container {
-    width: 225px;
+    width: 280px;
     position: absolute;
     border-radius: 5px;
-    padding: 10px 10px;
+    padding: 8px 10px;
     display: block;
-    font-size: 16px;
-}
-
-.alert-signout {
+    font-size: 14px;
     position: absolute;
     right: 50px;
-    top: 50px;
-    width: 320px;
+    top: 45px;
+    text-align: center;
 }
 
 .alert-success {
-    background-color: rgba(189, 219, 189, 0.562);
+    background-color: rgb(216, 236, 216);
     border: 1px solid rgb(5, 131, 5);
     color: rgb(5, 131, 5);
 }
 
 .alert-info {
-    background-color: #bdd7e479;
+    background-color: #dce8ee;
     border: 1px solid #178CF5;
     color: #178CF5;
 }

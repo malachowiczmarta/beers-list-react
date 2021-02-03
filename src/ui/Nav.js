@@ -9,11 +9,9 @@ import "./ui.css"
 import Modal from './Modal'
 import SigninComponent from '../components/SigninComponent/SigninComponent';
 import { GrClose } from "react-icons/gr";
-import { BsCheckCircle } from "react-icons/bs";
 import { setModal, alert, setAlertType } from '../store/reducers/ui';
 import {initAuthentication, setAuthError} from "../store/reducers/auth";
 import {emailSelector, isAuthenticatedSelector, authErrorSelector, authLoadingSelector} from "../store/selectors/authSelectors";
-import Alert from './Alert';
 
 
 function Nav(props) {
@@ -38,7 +36,10 @@ function Nav(props) {
           props.setAlertType("success")
           props.alert();
           console.log(props.showAlert)
-          const timer = setTimeout(() => props.alert(), 2000);
+          const timer = setTimeout(() => {
+            props.alert();
+            props.setAlertType("");
+          } , 2000);
           return () => clearTimeout(timer);
       })
       .catch((error) => {
@@ -71,14 +72,12 @@ function Nav(props) {
                   (<Button type="sign" label="Sign In" onSign={handleSignIn} />)
             }
           </div>
-          {props.showAlert ? <Alert variant={props.alertType} icon={<BsCheckCircle />} text=" You have been successfully logged out." /> : null}
         </nav>
         <Modal show={props.showModal}>
           <Button type="close" label={<GrClose />} onClose={handleSignIn} />
           <SigninComponent />
         </Modal>
       </>
-
   );
 }
 
