@@ -14,8 +14,10 @@ function request(method, endpoint = "", data = null) {
 };
 
 
-function get(endpoint) {
+ function get(endpoint) {
     return request('GET', endpoint);
 }
 
-export default {get};
+const api = {get};
+
+export default api;
