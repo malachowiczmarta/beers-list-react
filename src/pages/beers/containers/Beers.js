@@ -6,6 +6,7 @@ import { fetchBeers, setPage, setRows } from "../../../store/reducers/beers";
 import Loader from "react-loader-spinner";
 import Table from '../components/Table';
 import PaginationContainer from '../components/PaginationContainer';
+import './Beers.css';
 
 
 function Beers(props) {
@@ -23,7 +24,7 @@ function Beers(props) {
 
     const handleChangeRowsPerPage = (event) => {
       props.setRows(parseInt(event.target.value, 10));
-      props.setPage(1);
+      props.setPage(0);
     };
 
   return (

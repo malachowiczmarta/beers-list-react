@@ -1,5 +1,6 @@
 body {
-  font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -20,6 +21,12 @@ h3 {
   color: black;
 }
 
+a {
+  margin: 0 5px;
+  text-decoration: none;
+  color: black;
+}
+
 .loader-container {
   width: 100vw;
   height: 70vh;
@@ -27,6 +34,3 @@ h3 {
   justify-content: center;
   align-items: center;
 }
-
-/* font-family: 'Righteous', cursive;
-font-family: 'Roboto', sans-serif; */

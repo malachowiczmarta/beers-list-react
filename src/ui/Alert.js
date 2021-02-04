@@ -1,24 +1,38 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import "./ui.css"
 
-function Alert({icon, variant}) {
+function Alert(props) {
+    const {alertType, showAlert} = props
     let style = "alert-container";
     let label = "";
-    if (variant === "success") {
+
+    if (alertType === "success") {
+        label = "You have been successfully logged out.";
+        style += " alert-success";
+    } else if (alertType === "add") {
         label = " Added to the list";
         style += " alert-success";
-    } else if (variant === "info") {
+    } else if (alertType === "info") {
         label = " Already exists in the list";
         style += " alert-info";
     }
 
     return (
-        <div className={style}>
-            <span>{icon}{label}</span>
-        </div>
+        <>
+            {showAlert ? <div className={style}><p>{label}</p></div> : null}
+        </>
+
     );
 }
 
-
-
-export default Alert;
+const mapStateToProps = (state) => {
+    return {
+      showAlert: state.ui.showAlert,
+      alertType: state.ui.alertType
+    };
+  };
+  
+  
+  export default connect(mapStateToProps)(Alert);

@@ -4,6 +4,7 @@ const FETCH_BEERS_FAILED = "beers/FETCH_BEERS_FAILED";
 
 const SET_PAGE_NUMBER = "beers/SET_PAGE_NUMBER";
 const SET_ROWS_PER_PAGE = "beers/SET_ROWS_PER_PAGE";
+const SET_INITIAL_STATE = "beers/SET_INITIAL_STATE";
 
 const INITIAL_STATE = {
   beers: [],
@@ -47,6 +48,10 @@ export const setRows = (data) => ({
   payload: data
 });
 
+export const setInitialState = () => ({
+  type: SET_INITIAL_STATE
+});
+
 
 function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
@@ -79,7 +84,14 @@ function reducer(state = INITIAL_STATE, action) {
       case SET_ROWS_PER_PAGE:
         return {
           ...state,
-          page: action.payload
+          rows: action.payload
+        };
+      case SET_INITIAL_STATE:
+        return {
+          ...state,
+          beers: INITIAL_STATE.beers,
+          page: INITIAL_STATE.page,
+          rows: INITIAL_STATE.rows
         };
     default:
       return state;

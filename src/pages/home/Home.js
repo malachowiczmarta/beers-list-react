@@ -1,29 +1,48 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import { connect } from "react-redux";
+import { setInitialState } from "../../store/reducers/beers";
 import {Link} from 'react-router-dom';
-import Button from '../../components/button/Button';
 import './Home.css';
 
-function Home() {
+function Home(props) {
+  const {beers, setInitialState} = props;
+
+  useEffect(() => {
+    if (beers && beers.length !== 0) {
+      setInitialState();
+    };
+  }, [beers, setInitialState])
+
   return (
     <div className="home-container">
-      <section className="landing-pg-container">
+      <main className="landing-pg-container">
       <article>
-        <h1>Beers list</h1>
+        <h1>Say cheers<br />and<br /> taste the beer!</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-          labore et dolore.
+          Choose from hundreds of beers. Check what types are your favorite and open up to new flavors.
         </p>
         <Link to="/beers">
-          <Button type="get" label="get beers list"/>
+          <span className="btn-get">get beers list</span>
         </Link>
         <Link to="/random">
-          <Button type="get" label="get random beer"/>
+          <span className="btn-get">get random beer</span>
         </Link>
       </article>
-      </section>
+      </main>
      <a href='https://www.freepik.com/vectors/party'>Party vector created by pch.vector - www.freepik.com</a> 
     </div>
   );
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    beers: state.beers.beers,
+  };
+};
+
+const mapDispatchToProps = {
+  setInitialState
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);;

@@ -27,10 +27,12 @@ function ChartContainer({data, type}) {
         loader={<div>Loading Chart</div>}
         data={chartData}
         options={{
+          legend:'bottom',
           title: `Types of ${type}`,
           sliceVisibilityThreshold: 0.1,
           colors: ['#D06400', '#FC880F', '#FDB23E', '#f8b95b', '#f1c685'],
-          fontSize: 16
+          fontSize: 16,
+          fontName:'Roboto'
         }}
         rootProps={{ 'data-testid': '7' }}
       />
