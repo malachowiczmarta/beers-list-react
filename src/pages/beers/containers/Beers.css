@@ -11,8 +11,7 @@ a {
 }
 
 table {
-    font-family: 'Roboto', sans-serif;
-    font-family: Verdana;
+    /* font-family: 'Roboto', sans-serif; */
     font-size: 14px;
     border-collapse: collapse;
     width: 900px;

@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+import { connect } from "react-redux";
+import { setInitialState } from "../../store/reducers/beers";
 import {Link} from 'react-router-dom';
 import Button from '../../components/button/Button';
 import './Home.css';
 
-function Home() {
+function Home(props) {
+  const {beers} = props;
+
+  useEffect(() => {
+    if (beers && beers.length !== 0) {
+      props.setInitialState();
+    };
+  }, [beers])
+
   return (
     <div className="home-container">
       <main className="landing-pg-container">
@@ -26,4 +37,14 @@ function Home() {
   );
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    beers: state.beers.beers,
+  };
+};
+
+const mapDispatchToProps = {
+  setInitialState
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);;
