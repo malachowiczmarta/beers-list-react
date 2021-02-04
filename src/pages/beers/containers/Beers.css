@@ -1,6 +1,8 @@
-a {
-    text-decoration: none;
-    color: black;
+.table-pagination-container {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .table-container {
@@ -8,14 +10,17 @@ a {
     margin: 30px auto;
     display: flex;
     justify-content: center;
+    overflow-x: scroll;
 }
 
 table {
-    /* font-family: 'Roboto', sans-serif; */
     font-size: 14px;
     border-collapse: collapse;
-    width: 900px;
-    max-width: 100%;
+    max-width: 850px;
+}
+
+thead tr {
+    position: static;
 }
 
 td, th {
@@ -25,7 +30,7 @@ td, th {
 }
 
 tbody tr:nth-child(2n){
-    background-color: rgba(165, 171, 240, 0.445);
+    background-color: rgb(202, 204, 233);
 }
 
 th {
@@ -35,9 +40,49 @@ th {
     color: white;
 }
 
-.table-pagination-container {
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+@media (max-width: 576px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr {
+    margin: 0 0 1rem 0;
+    }
+
+    tr:nth-child(odd) {
+    background: rgb(202, 204, 233);
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        position: absolute;
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    td:nth-of-type(1):before { content: "Id"; }
+    td:nth-of-type(2):before { content: "Name"; }
+    td:nth-of-type(3):before { content: "Tagline"; }
+    td:nth-of-type(4):before { content: "First brewed"; }
+    td:nth-of-type(5):before { content: "abv"; }
+    td:nth-of-type(6):before { content: "ibu"; }
+    td:nth-of-type(7):before { content: "ebc"; }
 }
+
+
+

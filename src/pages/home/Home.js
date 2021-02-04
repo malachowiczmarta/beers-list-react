@@ -7,13 +7,13 @@ import Button from '../../components/button/Button';
 import './Home.css';
 
 function Home(props) {
-  const {beers} = props;
+  const {beers, setInitialState} = props;
 
   useEffect(() => {
     if (beers && beers.length !== 0) {
-      props.setInitialState();
+      setInitialState();
     };
-  }, [beers])
+  }, [beers, setInitialState])
 
   return (
     <div className="home-container">
