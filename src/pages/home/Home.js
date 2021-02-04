@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 import { setInitialState } from "../../store/reducers/beers";
 import {Link} from 'react-router-dom';
-import Button from '../../components/button/Button';
 import './Home.css';
 
 function Home(props) {
@@ -19,16 +18,15 @@ function Home(props) {
     <div className="home-container">
       <main className="landing-pg-container">
       <article>
-        <h1>Beers list</h1>
-        <p className="main-para">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-          labore et dolore.
+        <h1>Say cheers<br />and<br /> taste the beer!</h1>
+        <p>
+          Choose from hundreds of beers. Check what types are your favorite and open up to new flavors.
         </p>
         <Link to="/beers">
-          <Button type="get" label="get beers list"/>
+          <span className="btn-get">get beers list</span>
         </Link>
         <Link to="/random">
-          <Button type="get" label="get random beer"/>
+          <span className="btn-get">get random beer</span>
         </Link>
       </article>
       </main>
