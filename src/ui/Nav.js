@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-
 import fakeAuth from "fake-auth";
-
 import {Link} from 'react-router-dom';
+
 import Button from '../components/button/Button';
 import "./ui.css"
-import Modal from './Modal'
-import SigninComponent from '../components/SigninComponent/SigninComponent';
-import { GrClose } from "react-icons/gr";
 import { setModal, alert, setAlertType } from '../store/reducers/ui';
 import {initAuthentication, setAuthError} from "../store/reducers/auth";
 import {emailSelector, isAuthenticatedSelector, authErrorSelector, authLoadingSelector} from "../store/selectors/authSelectors";
 
 
 function Nav(props) {
-  console.log(props.showAlert)
   const [error, setError] = useState();
 
   const handleSignIn = () => {
@@ -73,10 +68,6 @@ function Nav(props) {
             }
           </div>
         </nav>
-        <Modal show={props.showModal}>
-          <Button type="close" label={<GrClose />} onClose={handleSignIn} />
-          <SigninComponent />
-        </Modal>
       </>
   );
 }

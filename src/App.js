@@ -20,6 +20,9 @@ import Random from './pages/random/Random';
 import Beers from './pages/beers/containers/Beers';
 import FavoriteContainer from './pages/favorite/components/FavoriteContainer';
 import Alert from './ui/Alert';
+import SigninComponent from './components/SigninComponent/SigninComponent';
+import Modal from './ui/Modal';
+
 
 const persistConfig = {
   key: 'root',
@@ -40,6 +43,9 @@ function App() {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <Router>
+            <Modal>
+              <SigninComponent />
+            </Modal>
             <Nav />
             <Alert />
             <Switch>
