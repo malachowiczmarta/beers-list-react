@@ -68,5 +68,13 @@ nav {
     background: #31357F;
     box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
     border-radius: 5px;
+    /* z-index: 99; */
+}
+
+.modal-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
     z-index: 99;
 }

@@ -32,7 +32,6 @@ const mapStateToProps = (state) => {
       showAlert: state.ui.showAlert,
       alertType: state.ui.alertType
     };
-  };
-  
-  
+};
+
   export default connect(mapStateToProps)(Alert);

@@ -23,10 +23,10 @@ function Home(props) {
           Choose from hundreds of beers. Check what types are your favorite and open up to new flavors.
         </p>
         <Link to="/beers">
-          <span className="btn-get">get beers list</span>
+          <span className="btn-get">beers list</span>
         </Link>
         <Link to="/random">
-          <span className="btn-get">get random beer</span>
+          <span className="btn-get">random beer</span>
         </Link>
       </article>
       </main>

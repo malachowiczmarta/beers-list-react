@@ -20,6 +20,9 @@ import Random from './pages/random/Random';
 import Beers from './pages/beers/containers/Beers';
 import FavoriteContainer from './pages/favorite/components/FavoriteContainer';
 import Alert from './ui/Alert';
+import { Modal } from '@material-ui/core';
+import SigninComponent from './components/SigninComponent/SigninComponent';
+
 
 const persistConfig = {
   key: 'root',
@@ -42,6 +45,9 @@ function App() {
           <Router>
             <Nav />
             <Alert />
+            <Modal>
+              <SigninComponent />
+            </Modal>
             <Switch>
               <Route path="/beers/:id">
                 <Beer />
