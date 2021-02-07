@@ -7,7 +7,7 @@ import Button from '../components/button/Button';
 import { GrClose } from "react-icons/gr";
 
 
-function Modal({children: Component, ...props}) {
+function Modal({children, ...props}) {
 
     const handleSignIn = () => {
         props.setModal();
@@ -16,12 +16,12 @@ function Modal({children: Component, ...props}) {
     return (
         <>
             {props.showModal ?
-                <div className="modal-wrapper">
+                (<div className="modal-wrapper">
                     <div className="modal-container">
                         <Button type="close" label={<GrClose />} onClose={handleSignIn} />
-                        {Component}
+                        {children}
                     </div>
-                </div>
+                </div>)
                 : null
             }
         </>
