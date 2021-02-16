@@ -1,29 +1,22 @@
 h1 {
     margin: 10px 10px;
-    font-size: 50px;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: 900;
-    font-family: 'Darker Grotesque', sans-serif;
-    -webkit-text-fill-color: #fff;
-    -webkit-text-stroke: 2px #000;
+    font-size: 30px;
 }
 
 h2, h3 {
     text-align: center;
+    font-size: 20px;
 }
 
 .beer-details-container {
-    height: calc(100vh - 160px);
     display: flex;
+    flex-direction: column;
     justify-content: center;
-
+    align-items: center;
 }
 
 .grid-container {
-    
-    /* margin: 0 auto; */
-    width: 55vw;
+    width: 90vw;
     height: 100%;
     display: grid;
     grid-template-columns: 28% 8% 28% 8% 28%;
@@ -63,7 +56,7 @@ h2, h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    font-size: 35px;
     text-align: center;
     background-color:rgba(245, 183, 82, 0.158);
     border-radius: 5px;
@@ -119,7 +112,38 @@ li::before {
 }
 
 .charts-container {
-    width: 25vw;
-    height: 100%;
-    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .grid-container {
+        width: 55vw;
+    }
+
+    .beer-details-container {
+        height: calc(100vh - 160px);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .grid-item-ibu, .grid-item-ebc, .grid-item-abv {
+        font-size: 50px;
+    }
+
+    .charts-container {
+        width: 25vw;
+        height: 100%;
+        margin-top: 50px;
+    }
 }

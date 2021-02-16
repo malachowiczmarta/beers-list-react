@@ -3,10 +3,10 @@ import ChartContainer from '../chart/ChartContainer';
 import './BeerDetails.css'
 
 function BeerDetails({data}) {
-  
+
   return (
     <div className="beer-details-container">
-      
+
       <div className="grid-container">
 
         <div className="grid-item-header-abv">
