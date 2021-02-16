@@ -14,7 +14,7 @@ function FavoriteContainer(props) {
     <div className="favorite-container">
       <h2>Yours favorite beers:</h2>
       <div>
-        {props.favorite.map((beer, index) => {
+        {props.favorite && props.favorite.length > 0 ? props.favorite.map((beer, index) => {
           return (
             <div key={`fav-${index}`} className="fav-item-wrapper">
               <div className="fav-item-container">
@@ -27,7 +27,7 @@ function FavoriteContainer(props) {
               </div>
             </div>
           );
-        })}
+        }) : <h3>Your list is empty. Please add some delicious beer to your list.</h3>}
       </div>
     </div>
   );
