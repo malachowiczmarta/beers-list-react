@@ -1,42 +1,50 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 import { connect } from "react-redux";
 import { fetchBeers, setPage, setRows } from "../../../store/reducers/beers";
 
 import Loader from "react-loader-spinner";
-import Table from '../components/Table';
-import PaginationContainer from '../components/PaginationContainer';
-import './Beers.css';
-
+import Table from "../components/Table";
+import PaginationContainer from "../components/PaginationContainer";
+import "./Beers.css";
 
 function Beers(props) {
-    const fetchBeers = props.fetchBeers;
-    const page = props.page;
-    const rows = props.rows;
+  const fetchBeers = props.fetchBeers;
+  const page = props.page;
+  const rows = props.rows;
 
-    useEffect(() => {
-        fetchBeers(page, rows);
-    }, [fetchBeers, page, rows]);
+  useEffect(() => {
+    fetchBeers(page, rows);
+  }, [fetchBeers, page, rows]);
 
-    const handleChangePage = (event, newPage) => {
-      props.setPage(newPage);
-    };
+  const handleChangePage = (event, newPage) => {
+    props.setPage(newPage);
+  };
 
-    const handleChangeRowsPerPage = (event) => {
-      props.setRows(parseInt(event.target.value, 10));
-      props.setPage(0);
-    };
+  const handleChangeRowsPerPage = (event) => {
+    props.setRows(parseInt(event.target.value, 10));
+    props.setPage(0);
+  };
 
   return (
-      <div className="beers-container">
-        {props.isError && <p>An error has occurred, try later</p>}
-        {props.isLoading ? <div className="loader-container"><Loader type="ThreeDots" color="#31357F" height={100} width={100} /></div> :
-          <>
-            <Table beers={props.beers}/>
-            <PaginationContainer page={page} handleChangePage={handleChangePage} rowsPerPage={rows} handleChangeRowsPerPage={handleChangeRowsPerPage} />
-          </>
-        }
-      </div>
+    <div className="beers-container">
+      {props.isError && <p>An error has occurred, try later</p>}
+      {props.isLoading ? (
+        <div className="loader-container">
+          <Loader type="ThreeDots" color="#31357F" height={100} width={100} />
+        </div>
+      ) : (
+        <>
+          <Table beers={props.beers} />
+          <PaginationContainer
+            page={page}
+            handleChangePage={handleChangePage}
+            rowsPerPage={rows}
+            handleChangeRowsPerPage={handleChangeRowsPerPage}
+          />
+        </>
+      )}
+    </div>
   );
 }
 
@@ -53,7 +61,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
   fetchBeers,
   setPage,
-  setRows
+  setRows,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Beers);

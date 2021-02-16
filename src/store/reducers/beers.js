@@ -11,15 +11,14 @@ const INITIAL_STATE = {
   isLoading: false,
   isError: false,
   page: 0,
-  rows: 10
+  rows: 10,
 };
-
 
 const fetchRequested = () => ({ type: FETCH_BEERS_REQUESTED });
 const fetchFailed = () => ({ type: FETCH_BEERS_FAILED });
 const fetchBeersSucceded = (data) => ({
   type: FETCH_BEERS_SUCCEDED,
-  payload: data
+  payload: data,
 });
 
 export const fetchBeers = (page, rows) => {
@@ -27,7 +26,9 @@ export const fetchBeers = (page, rows) => {
   return function (dispatch) {
     dispatch(fetchRequested());
     const punkApiPage = page + 1;
-    fetch(`https://api.punkapi.com/v2/beers?page=${punkApiPage}&per_page=${rows}`)
+    fetch(
+      `https://api.punkapi.com/v2/beers?page=${punkApiPage}&per_page=${rows}`
+    )
       .then((response) => response.json())
       .then((data) => {
         dispatch(fetchBeersSucceded(data));
@@ -40,18 +41,17 @@ export const fetchBeers = (page, rows) => {
 
 export const setPage = (data) => ({
   type: SET_PAGE_NUMBER,
-  payload: data
+  payload: data,
 });
 
 export const setRows = (data) => ({
   type: SET_ROWS_PER_PAGE,
-  payload: data
+  payload: data,
 });
 
 export const setInitialState = () => ({
-  type: SET_INITIAL_STATE
+  type: SET_INITIAL_STATE,
 });
-
 
 function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
@@ -59,14 +59,14 @@ function reducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         isLoading: true,
-        isError: false
+        isError: false,
       };
     case FETCH_BEERS_SUCCEDED:
       return {
         ...state,
         isLoading: false,
         isError: false,
-        beers: action.payload
+        beers: action.payload,
       };
     case FETCH_BEERS_FAILED:
       return {
@@ -74,25 +74,25 @@ function reducer(state = INITIAL_STATE, action) {
         isLoading: false,
         isError: true,
         page: INITIAL_STATE.page,
-        rows: INITIAL_STATE.rows
+        rows: INITIAL_STATE.rows,
       };
     case SET_PAGE_NUMBER:
       return {
         ...state,
-        page: action.payload
+        page: action.payload,
       };
-      case SET_ROWS_PER_PAGE:
-        return {
-          ...state,
-          rows: action.payload
-        };
-      case SET_INITIAL_STATE:
-        return {
-          ...state,
-          beers: INITIAL_STATE.beers,
-          page: INITIAL_STATE.page,
-          rows: INITIAL_STATE.rows
-        };
+    case SET_ROWS_PER_PAGE:
+      return {
+        ...state,
+        rows: action.payload,
+      };
+    case SET_INITIAL_STATE:
+      return {
+        ...state,
+        beers: INITIAL_STATE.beers,
+        page: INITIAL_STATE.page,
+        rows: INITIAL_STATE.rows,
+      };
     default:
       return state;
   }

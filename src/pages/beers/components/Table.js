@@ -1,8 +1,7 @@
-import React from 'react';
-import {Link} from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
-
-function Table({beers}) {
+function Table({ beers }) {
   return (
     <div className="table-container">
       <table>
@@ -18,19 +17,32 @@ function Table({beers}) {
           </tr>
         </thead>
         <tbody>
-
-          {beers.map(beer => {
+          {beers.map((beer) => {
             return (
               <tr key={`row-${beer.id}`}>
-                <td><Link to={`/beers/${beer.id}`}>{beer.id}</Link></td>
-                <td><Link to={`/beers/${beer.id}`}>{beer.name}</Link></td>
-                <td><Link to={`/beers/${beer.id}`}>{beer.tagline}</Link></td>
-                <td><Link to={`/beers/${beer.id}`}>{beer.first_brewed}</Link></td>
-                <td><Link to={`/beers/${beer.id}`}>{beer.abv}</Link></td>
-                <td><Link to={`/beers/${beer.id}`}>{beer.ibu}</Link></td>
-                <td><Link to={`/beers/${beer.id}`}>{beer.ebc}</Link></td>
+                <td>
+                  <Link to={`/beers/${beer.id}`}>{beer.id}</Link>
+                </td>
+                <td>
+                  <Link to={`/beers/${beer.id}`}>{beer.name}</Link>
+                </td>
+                <td>
+                  <Link to={`/beers/${beer.id}`}>{beer.tagline}</Link>
+                </td>
+                <td>
+                  <Link to={`/beers/${beer.id}`}>{beer.first_brewed}</Link>
+                </td>
+                <td>
+                  <Link to={`/beers/${beer.id}`}>{beer.abv}</Link>
+                </td>
+                <td>
+                  <Link to={`/beers/${beer.id}`}>{beer.ibu}</Link>
+                </td>
+                <td>
+                  <Link to={`/beers/${beer.id}`}>{beer.ebc}</Link>
+                </td>
               </tr>
-            )
+            );
           })}
         </tbody>
       </table>
@@ -39,6 +51,3 @@ function Table({beers}) {
 }
 
 export default Table;
-
-
-

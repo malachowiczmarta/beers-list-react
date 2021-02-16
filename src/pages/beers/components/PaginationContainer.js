@@ -1,8 +1,12 @@
-import React from 'react';
-import TablePagination from '@material-ui/core/TablePagination';
+import React from "react";
+import TablePagination from "@material-ui/core/TablePagination";
 
-export default function PaginationContainer({page, handleChangePage, rowsPerPage, handleChangeRowsPerPage}) {
-
+export default function PaginationContainer({
+  page,
+  handleChangePage,
+  rowsPerPage,
+  handleChangeRowsPerPage,
+}) {
   return (
     <div className="table-pagination-container">
       <TablePagination

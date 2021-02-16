@@ -1,39 +1,35 @@
-import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
-import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-import { PersistGate } from 'redux-persist/integration/react';
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import { PersistGate } from "redux-persist/integration/react";
 
 import rootReducer from "./rootReducer";
-import Home from './pages/home/Home';
-import Nav from './ui/Nav';
-import Beer from './pages/beer/Beer';
-import Random from './pages/random/Random';
-import Beers from './pages/beers/containers/Beers';
-import FavoriteContainer from './pages/favorite/components/FavoriteContainer';
-import Alert from './ui/Alert';
-import SigninComponent from './components/SigninComponent/SigninComponent';
-import Modal from './ui/Modal';
-
+import Home from "./pages/home/Home";
+import Nav from "./ui/Nav";
+import Beer from "./pages/beer/Beer";
+import Random from "./pages/random/Random";
+import Beers from "./pages/beers/containers/Beers";
+import FavoriteContainer from "./pages/favorite/components/FavoriteContainer";
+import Alert from "./ui/Alert";
+import SigninComponent from "./components/SigninComponent/SigninComponent";
+import Modal from "./ui/Modal";
 
 const persistConfig = {
-  key: 'root',
+  key: "root",
   storage: storage,
-  whitelist: ['beers', 'ui', 'auth']
+  whitelist: ["beers", "ui", "auth"],
 };
 const persistedReducer = persistReducer(persistConfig, rootReducer),
   composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose,
-  store = createStore(persistedReducer, /* preloadedState, */ composeEnhancers(
-    applyMiddleware(thunk)
-  ));
+  store = createStore(
+    persistedReducer,
+    /* preloadedState, */ composeEnhancers(applyMiddleware(thunk))
+  );
 
 let persistor = persistStore(store);
 

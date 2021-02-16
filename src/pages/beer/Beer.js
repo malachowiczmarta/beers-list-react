@@ -1,31 +1,29 @@
-import React from 'react';
-import {
-  useParams,
-  Link
-} from "react-router-dom";
+import React from "react";
+import { useParams, Link } from "react-router-dom";
 
 import { connect } from "react-redux";
 
-import BeerDetails from '../../components/beerDetails/BeerDetails';
-import './Beer.css';
+import BeerDetails from "../../components/beerDetails/BeerDetails";
+import "./Beer.css";
 import { BiArrowBack } from "react-icons/bi";
-import AddFav from '../../ui/AddFav';
+import AddFav from "../../ui/AddFav";
 
 function Beer(props) {
-  let {id} = useParams();
-  const {beers} = props;
+  let { id } = useParams();
+  const { beers } = props;
   const beer = beers.filter(function (item) {
     return item.id === Number(id);
   });
 
-  
   return (
     <>
       <div className="link-container">
-        <Link to="/beers"><BiArrowBack/> back to the list</Link>
-        <AddFav data={beer[0]}/>
+        <Link to="/beers">
+          <BiArrowBack /> back to the list
+        </Link>
+        <AddFav data={beer[0]} />
       </div>
-      <BeerDetails data={beer[0]}/>
+      <BeerDetails data={beer[0]} />
     </>
   );
 }
@@ -35,6 +33,5 @@ const mapStateToProps = (state) => {
     beers: state.beers.beers,
   };
 };
-
 
 export default connect(mapStateToProps)(Beer);
